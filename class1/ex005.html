@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <style>
+            body {
+                background-color:chocolate;
+                color: whitesmoke;
+                font: bold 20pt Helvetica;
+            }
+        </style>
+        <title>Exercicio 005</title>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <p>The curse has been lifted</p>
+        <p>This is something that <strong>insist</strong> in being showed more than once</p>
+        <p class="test">This is a test text</p>
+
+        <script>
+            
+            var opcao = window.confirm('is JS this easy?') //balao de alerta com bottao de OK ou Cancel
+            var nome = window.prompt('whats your name?')  //recebe sempre um valor string, caso queira receber um numero eh necessario converter o tipo da variavel
+            var n1 = Number.parseFloat(window.prompt("Coloque um valor para n1") ) //se quiser que o proprio JS decida que tipo de numero eh, basta usar Number(n1)
+            var n2 = Number.parseFloat(window.prompt("Coloque um valor para n2") )
+            var soma = n1+n2
+            var mult = n1*n2
+            var div = n1/n2
+            var preco = 1632.34
+            var nometamanho = 'Bananinha fila da puta'
+            window.alert('Muito Prazer, ' + nome + '.\nGrande dia!') //concatenacao de string
+            window.alert(`n1+n2 = ${soma}\n n1*n2 = ${mult}\n n1/n2 = ${div}`) //template strings
+
+            window.document.writeln(`Seu nome tem ${nome.length} letras, e ${nometamanho.toUpperCase()} tem tamanho ${nometamanho.length}<br>`) 
+            window.document.writeln(`Aqui estao formas de dar display em um preco de varios paises:
+                <br>${preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}
+                <br>${preco.toLocaleString('pt-br', {style: 'currency', currency: 'USD'})}
+                <br>${preco.toLocaleString('pt-br', {style: 'currency', currency: 'EUR'})} `)
+            
+            var paragrafo = window.document.getElementsByTagName('p')[1] //esse [1] so existe pois existe mais de um <p>, sendo cada p um numero, sequencial e comecando pelo 0
+            window.document.writeln(`<br>Appeared more than once ${paragrafo.innerText.toLowerCase()}`) //como pode ser observado, o innerText nao herda as filhas do p, no caso o <strong> presente no 'insist', para isso, devemos utilizar ao inves do .innerText, .innerHTML
+            var d = window.document.querySelector('p.test') //eh p.test pois quero selecionar a tag <p> com a classe = 'test', caso fosse um id, seria p#test
+            d.style.background = 'red'
+
+
+        </script>
+    </body>
+</html>
